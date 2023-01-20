@@ -17,6 +17,7 @@ body {
 /* TITLE */
 h1{
   text-align: center;
+  margin-top: 5px;
 }
 
 /* START/ROTATION CONTAINER */
@@ -136,21 +137,6 @@ kbd {
 .button-2:-webkit-details-marker {
   display: none;
 }
-
-/* SETTING BUTTON */
-.setting{
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 40px;
-  cursor: pointer;
-  color: black;
-}
-.setting:hover{
-  color:rgba(0, 0, 0, 0.596);
-}
-
-
 
 /* POPUP WINDOW */
 /* background*/

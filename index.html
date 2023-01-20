@@ -76,10 +76,7 @@
     <canvas id="gl-canvas" width="600" height="530" >
       Oops ... your browser doesn't support the HTML5 canvas element
     </canvas>
-  <!-- SETTING BUTTON -->
-    <span id="btnW" class="setting"><i class="fa fa-gear"></i></span>
-  
-  
+    
     <div>
   <!--START AND ROTATION CONTAINER-->
   
@@ -104,8 +101,8 @@
           <td>
               <div class="texture">
                   <p>Sphere Textures</p>
-                  <button id="BtnA1" style="background: url('imagesFile/LavaTexture.jpg');background-size:100%;">Lava</button>
-                  <button id="BtnA2" style="background: url('imagesFile/Wood.jpg');background-size:100%;">Wood</button>
+                  <button id="BtnA1" style="background: url('imagesFile/GrassTexture.jpg');background-size:100%;">Grass</button>
+                  <button id="BtnA2" style="background: url('imagesFile/SeaWaterTexture.jpg');background-size:100%;">Sea</button>
                   <button id="BtnA3" style="background: url('imagesFile/MoonTexture.jpg');background-size:100%;">Moon</button>
               </div>
           </td>
@@ -136,7 +133,7 @@
               <td>
                   <div class="texture">
                       <p>Cylinder Textures</p>
-                      <button id="BtnB1" style="background: url('imagesFile/GrassTexture.jpg');background-size:100%;">Grass</button>
+                      <button id="BtnB1" style="background: url('imagesFile/Wood.jpg');background-size:100%;">Wood</button>
                       <button id="BtnB2" style="background: url('imagesFile/Fire.jpg');background-size:100%;">Fire</button>
                       <button id="BtnB3" style="background: url('imagesFile/SandTexture.png');background-size:100%;">Sand</button>
                   </div>
@@ -146,8 +143,8 @@
               <td>
                   <div class="texture">
                       <p>Cube Textures</p>
-                      <button id="BtnC1" style="background: url('imagesFile/Beach.jpg');background-size:100%;">Beach</button>
-                      <button id="BtnC2" style="background: url('imagesFile/SeaWaterTexture.jpg');background-size:100%;">Sea</button>
+                      <button id="BtnC1" style="background: url('imagesFile/LavaTexture.jpg');background-size:100%;">Lava</button>
+                      <button id="BtnC2" style="background: url('imagesFile/Brick.jpg');background-size:100%;">Brick</button>
                       <button id="BtnC3" style="background: url('imagesFile/WallBrick.jpg');background-size:100%;">Stone</button>
                   </div>
               </td>
@@ -155,116 +152,16 @@
       </table>
     </span>
   </div>
-<!--POPUP START-->
-<!-- POPUP WINDOW -->
-<div id="myWindow" class="popup">
-  <!-- window content -->
-  <div class="popup-content">
-      <span class="close">&times;</span>
-      <h2>SETTINGS</h2>        
-      <table>
-          <td>
-              <div class="texture">
-                  <p>Sphere Textures</p>
-                  <button id="BtnA1" style="background: url('imagesFile/LavaTexture.jpg');background-size:100%;">Lava</button>
-                  <button id="BtnA2" style="background: url('imagesFile/Wood.jpg');background-size:100%;">Wood</button>
-                  <button id="BtnA3" style="background: url('imagesFile/MoonTexture.jpg');background-size:100%;">Moon</button>
-              </div>
-          </td>
-          <td rowspan="3">
-            <div class="optionR">
-              <p>Material Shininess</p>
-              <input id="materialshininess" type="range" min="1" max="100" value="10" step="1" oninput="MShininess.innerText=materialshininess.value" />
-              <span id="MShininess"> 10</span>
-  
-              <p>Light Position</p>
-              <input id="lightpositions" type="range" min="0.1" max="10" value="1.0" step="0.1" oninput="LPosition.innerText=lightpositions.value" />
-              <span id="LPosition"> 1.0</span>
-  
-              <p>Ambient Light</p>
-              <input id="ambientLight" type="range" min="0.1" max="1" value="0.1" step="0.1" oninput="LAmbient.innerText=ambientLight.value" />
-              <span id="LAmbient"> 0.1</span>
-  
-              <p>Diffuse Light</p>
-              <input id="diffuseLight" type="range" min="0.1" max="10" value="1.0" step="0.1" oninput="LDiffuse.innerText=diffuseLight.value" />
-              <span id="LDiffuse"> 1.0</span>
-  
-              <p>Specular Light</p>
-              <input id="specularLight" type="range" min="0.1" max="10" value="1.0" step="0.1" oninput="LSpecular.innerText=specularLight.value" />
-              <span id="LSpecular"> 1.0</span>
-            </div>
-          </td>
-          <tr>
-              <td>
-                  <div class="texture">
-                      <p>Cylinder Textures</p>
-                      <button id="BtnB1" style="background: url('imagesFile/GrassTexture.jpg');background-size:100%;">Grass</button>
-                      <button id="BtnB2" style="background: url('imagesFile/Fire.jpg');background-size:100%;">Fire</button>
-                      <button id="BtnB3" style="background: url('imagesFile/SandTexture.png');background-size:100%;">Sand</button>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  <div class="texture">
-                      <p>Cube Textures</p>
-                      <button id="BtnC1" style="background: url('imagesFile/Beach.jpg');background-size:100%;">Beach</button>
-                      <button id="BtnC2" style="background: url('imagesFile/SeaWaterTexture.jpg');background-size:100%;">Sea</button>
-                      <button id="BtnC3" style="background: url('imagesFile/WallBrick.jpg');background-size:100%;">Stone</button>
-                  </div>
-              </td>
-          </tr>
-      </table>
-  </div>  
-</div>  
- 
-</div>
-<!--POPUP ENDS-->
-  
-
-  <!-- JS FOR POPUP WINDOW -->
-    <!-- note: pwindow=popup window -->
-    <script>
-      // Get the pwindow
-      var pwindow = document.getElementById("myWindow");
-  
-      // Get the button that opens the pwindow
-      var btn = document.getElementById("btnW");
-  
-      // Get the <span> element that closes the pwindow
-      var span = document.getElementsByClassName("close")[0];
-  
-      //canvas color
-      var colorChange = document.getElementById("favcolor");
-      
-      // When the user clicks the button, open the pwindow
-      btn.onclick = function() {
-      pwindow.style.display = "block";
-      }
-  
-      // When the user clicks on <span> (x), close the pwindow
-      span.onclick = function() {
-      pwindow.style.display = "none";
-      }
-  
-      // When the user clicks anywhere outside of the pwindow, close it
-      window.onclick = function(event) {
-      if (event.target == pwindow) {
-          pwindow.style.display = "none";
-      }
-      }
-      </script>
-</body>
 
 <!-- Objects Textures. It will pass to script.js-->
-<img id="PictureA1" src="imagesFile/LavaTexture.jpg" hidden>
-<img id="PictureA2" src="imagesFile/Wood.jpg" hidden>
+<img id="PictureA1" src="imagesFile/GrassTexture.jpg" hidden>
+<img id="PictureA2" src="imagesFile/SeaWaterTexture.jpg" hidden>
 <img id="PictureA3" src="imagesFile/MoonTexture.jpg" hidden>
-<img id="PictureB1" src="imagesFile/GrassTexture.jpg" hidden>
+<img id="PictureB1" src="imagesFile/Wood.jpg" hidden>
 <img id="PictureB2" src="imagesFile/Fire.jpg" hidden>
 <img id="PictureB3" src="imagesFile/SandTexture.png" hidden>
-<img id="PictureC1" src="imagesFile/Beach.jpg" hidden>
-<img id="PictureC2" src="imagesFile/SeaWaterTexture.jpg" hidden>
+<img id="PictureC1" src="imagesFile/LavaTexture.jpg" hidden>
+<img id="PictureC2" src="imagesFile/Brick.jpg" hidden>
 <img id="PictureC3" src="imagesFile/WallBrick.jpg" hidden>
 
 <!--Ensure everything is loaded properly before any function call-->
