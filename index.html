@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Responsive Web Design -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- fa fa icon -->
-    
+    <link rel="icon" href="https://ia903409.us.archive.org/6/items/github.com-RH12503-triangula_-_2021-04-25_12-38-33/cover.jpg" type="image/icon type">
+
   <script id="vertex-shader" type="x-shader/x-vertex">
       attribute vec4 vPosition;
       attribute vec4 vColor;
@@ -77,22 +78,83 @@
     </canvas>
   <!-- SETTING BUTTON -->
     <span id="btnW" class="setting"><i class="fa fa-gear"></i></span>
+  
+  
+    <div>
   <!--START AND ROTATION CONTAINER-->
+  
     <span class="box">
       <h1>Lighthing and Shading</h1>
-      <br>
+      
       <p style="text-decoration:underline">INSTRUCTIONS</p>
       <div id="StopStart">
-        <span>Press <kbd>spacebar</kbd> key to START/PAUSE or click </span> 
+        <span>Press <kbd>SPACEBAR</kbd> key to START/PAUSE or click </span> 
         <button class="button-2 ">START/PAUSE</button>
       </div>
-      <span>To change rotation axis press <kbd>X</kbd><kbd>Y</kbd><kbd>Z</kbd> keys or click </span>
+      <span>To change the rotation axis, press <kbd>X</kbd><kbd>Y</kbd><kbd>Z</kbd> keys or click </span>
       <button id="buttonX" class="button-2">X</button>
       <button id="buttonY" class="button-2">Y</button>
       <button id="buttonZ" class="button-2">Z</button>
-      
-      
     </span>
+
+  <div id="myWindow1" class="box1">
+    <span class = "pop-up content">
+      <h1>Settings</h1>        
+      <table>
+          <td>
+              <div class="texture">
+                  <p>Sphere Textures</p>
+                  <button id="BtnA1" style="background: url('imagesFile/LavaTexture.jpg');background-size:100%;">Lava</button>
+                  <button id="BtnA2" style="background: url('imagesFile/Wood.jpg');background-size:100%;">Wood</button>
+                  <button id="BtnA3" style="background: url('imagesFile/MoonTexture.jpg');background-size:100%;">Moon</button>
+              </div>
+          </td>
+          <td rowspan="3">
+            <div class="optionR">
+              <p>Material Shininess</p>
+              <input id="materialshininess" type="range" min="1" max="100" value="10" step="1" oninput="MShininess.innerText=materialshininess.value" />
+              <span id="MShininess"> 10</span>
+  
+              <p>Light Position</p>
+              <input id="lightpositions" type="range" min="0.1" max="10" value="1.0" step="0.1" oninput="LPosition.innerText=lightpositions.value" />
+              <span id="LPosition"> 1.0</span>
+  
+              <p>Ambient Light</p>
+              <input id="ambientLight" type="range" min="0.1" max="1" value="0.1" step="0.1" oninput="LAmbient.innerText=ambientLight.value" />
+              <span id="LAmbient"> 0.1</span>
+  
+              <p>Diffuse Light</p>
+              <input id="diffuseLight" type="range" min="0.1" max="10" value="1.0" step="0.1" oninput="LDiffuse.innerText=diffuseLight.value" />
+              <span id="LDiffuse"> 1.0</span>
+  
+              <p>Specular Light</p>
+              <input id="specularLight" type="range" min="0.1" max="10" value="1.0" step="0.1" oninput="LSpecular.innerText=specularLight.value" />
+              <span id="LSpecular"> 1.0</span>
+            </div>
+          </td>
+          <tr>
+              <td>
+                  <div class="texture">
+                      <p>Cylinder Textures</p>
+                      <button id="BtnB1" style="background: url('imagesFile/GrassTexture.jpg');background-size:100%;">Grass</button>
+                      <button id="BtnB2" style="background: url('imagesFile/Fire.jpg');background-size:100%;">Fire</button>
+                      <button id="BtnB3" style="background: url('imagesFile/SandTexture.png');background-size:100%;">Sand</button>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="texture">
+                      <p>Cube Textures</p>
+                      <button id="BtnC1" style="background: url('imagesFile/Beach.jpg');background-size:100%;">Beach</button>
+                      <button id="BtnC2" style="background: url('imagesFile/SeaWaterTexture.jpg');background-size:100%;">Sea</button>
+                      <button id="BtnC3" style="background: url('imagesFile/WallBrick.jpg');background-size:100%;">Stone</button>
+                  </div>
+              </td>
+          </tr>
+      </table>
+    </span>
+  </div>
 <!--POPUP START-->
 <!-- POPUP WINDOW -->
 <div id="myWindow" class="popup">
@@ -153,7 +215,9 @@
               </td>
           </tr>
       </table>
-  </div>   
+  </div>  
+</div>  
+ 
 </div>
 <!--POPUP ENDS-->
   
