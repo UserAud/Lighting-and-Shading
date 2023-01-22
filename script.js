@@ -35,11 +35,19 @@ var diffuseProduct;
 //Light specular * Material specular
 var specularProduct;
 
+let lightOn = true;
+
 //Initialize lighting and shading
 var lightPosition = vec4(0.1, 1.0, 1.0, 0.0);
 var lightAmbient = vec4(0.1, 1.0, 0.4, 1.0);
+var lightAmbientbp = vec4(0.1, 1.0, 0.4, 1.0);
+
 var lightDiffuse = vec4(1.0, 1.0, 1.0, 1.0);
+var lightDiffusebp = vec4(1.0, 1.0, 1.0, 1.0);
+
 var lightSpecular = vec4(1.0, 1.0, 1.0, 1.0);
+var lightSpecularbp = vec4(1.0, 1.0, 1.0, 1.0);
+
 var materialAmbient = vec4(1.0, 0.0, 1.0, 1.0);
 var materialDiffuse = vec4(1.0, 0.8, 0.0, 1.0);
 var materialSpecular = vec4(1.0, 0.8, 0.0, 1.0);
@@ -264,6 +272,7 @@ function init() {
   document.getElementById("ambientLight").onchange = function() {
     var x = document.getElementById("ambientLight").value;
     lightAmbient = vec4(x, x, 0.1, 1.0);
+    lightAmbientbp = vec4(x, x, 0.1, 1.0);
     ambientProduct = mult(lightAmbient, materialAmbient);
     gl.uniform4fv(gl.getUniformLocation(program, "ambientProduct"), flatten(ambientProduct));
   };
@@ -272,6 +281,7 @@ function init() {
   document.getElementById("diffuseLight").onchange = function() {
     var x = document.getElementById("diffuseLight").value;
     lightDiffuse = vec4(x, x, 0.1, 1.0);
+    lightDiffusebp = vec4(x, x, 0.1, 1.0);
     diffuseProduct = mult(lightDiffuse, materialDiffuse);
     gl.uniform4fv(gl.getUniformLocation(program, "diffuseProduct"), flatten(diffuseProduct));
   };
@@ -280,6 +290,7 @@ function init() {
   document.getElementById("specularLight").onchange = function() {
     var x = document.getElementById("specularLight").value;
     lightSpecular = vec4(x, x, 0.1, 1.0);
+    lightSpecularbp = vec4(x, x, 0.1, 1.0);
     specularProduct = mult(lightSpecular, materialSpecular);
     gl.uniform4fv(gl.getUniformLocation(program, "specularProduct"), flatten(specularProduct));
   };
@@ -333,6 +344,52 @@ function init() {
     flag = !flag; //Stop or start animation
   };
 
+  //Click animation light ON/OFF
+  document.getElementById("btn_toggle_light").onclick = function() {
+    
+    if (lightOn) {
+      lightOn = false;
+      updateBlackColors();
+      
+      document.querySelector('#btn_toggle_light').innerHTML = 'Turn Light ON';
+  
+    } else {
+      lightOn = true;
+
+      updateLightColors();
+      document.querySelector('#btn_toggle_light').innerHTML = 'Turn Light OFF';
+      //On or off light
+    } 
+  };
+  const updateBlackColors = () => {
+    lightAmbient = vec4(0, 0, 0.1, 1.0);
+    ambientProduct = mult(lightAmbient, materialAmbient);
+    gl.uniform4fv(gl.getUniformLocation(program, "ambientProduct"), flatten(ambientProduct));
+
+    lightDiffuse = vec4(0,0, 0.1, 1.0);
+    diffuseProduct = mult(lightDiffuse, materialDiffuse);
+    gl.uniform4fv(gl.getUniformLocation(program, "diffuseProduct"), flatten(diffuseProduct));
+
+    lightSpecular = vec4(0, 0, 0.1, 1.0);
+    specularProduct = mult(lightSpecular, materialSpecular);
+    gl.uniform4fv(gl.getUniformLocation(program, "specularProduct"), flatten(specularProduct));
+  }
+
+  const updateLightColors = () => {
+    /**
+     * Update scene light colors based on user input
+     * 
+     * @function updateLightColors
+     */
+    ambientProduct = mult(lightAmbientbp, materialAmbient);
+      gl.uniform4fv(gl.getUniformLocation(program, "ambientProduct"), flatten(ambientProduct));
+
+      diffuseProduct = mult(lightDiffusebp, materialDiffuse);
+      gl.uniform4fv(gl.getUniformLocation(program, "diffuseProduct"), flatten(diffuseProduct));
+
+      specularProduct = mult(lightSpecularbp, materialSpecular);
+      gl.uniform4fv(gl.getUniformLocation(program, "specularProduct"), flatten(specularProduct));
+  }
 
   //Lighting and shading
   gl.uniform4fv(gl.getUniformLocation(program, "ambientProduct"), flatten(ambientProduct));
