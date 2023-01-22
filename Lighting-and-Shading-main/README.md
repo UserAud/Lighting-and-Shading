@@ -1,1 +1,0 @@
-# Lighting-and-Shading
