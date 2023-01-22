@@ -28,7 +28,7 @@ h1{
   border-style: none;
   background-color: #e4e6e2;
   margin-left: 50px;
-  margin-top: 25px;
+  margin-top: 15px;
   width: 40vw;
   box-shadow: 5px 5px 5px #5c677d; 
 }
@@ -41,30 +41,11 @@ h1{
   border-style: none;
   background-color: #e4e6e2;
   margin-left: 50px;
-  margin-top: 250px;
+  margin-top: 230px;
   width: 40vw;
   box-shadow: 5px 5px 5px #5c677d; 
 }
 
-kbd {
-	margin: 0px 0.1em;
-	padding: 0.1em 0.6em;
-	border-radius: 3px;
-	border: 1px solid rgb(204, 204, 204);
-	color: rgb(51, 51, 51);
-	line-height: 2;
-	/*font-family: Arial,Helvetica,sans-serif;*/
-  /*font-family: 'Josefin Sans', sans-serif;*/
-	font-size: 10px;
-	display: inline-block;
-	box-shadow: 0px 1px 0px rgba(0,0,0,0.2), inset 0px 0px 0px 2px #ffffff;
-	background-color: rgb(247, 247, 247);
-	-moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
-	-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	text-shadow: 0 1px 0 #fff;
-}
 .box span{
   margin-left: 10px;
   line-height:10px;
@@ -138,9 +119,25 @@ kbd {
   display: none;
 }
 
-/* POPUP WINDOW */
+.btn-toggle{
+  display: inline-block;
+  width: 96%;
+  padding: 3px 0px;
+  margin: 5px 2%;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 500;
+  color: black;
+  background-color: lightgray;
+}
+.btn-toggle:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+/* SETTINGS WINDOW */
 /* background*/
-.popup {
+.setting {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -165,19 +162,7 @@ kbd {
 .popup-content h2 {
   text-align: center;
 }
-/* close button */
-.close {
-  color: black;
-  float: right;
-  font-size: 40px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: grey;
-  text-decoration: none;
-  cursor: pointer;
-}
+
 input[type="range"] { 
   margin: auto;
   -webkit-appearance: none;
@@ -312,7 +297,8 @@ canvas{
   height: 900px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #0f1bbe;
+  /* border-color: #0f1bbe; */
+  border-color: #2a2b4f;
   border-width: 50px 30px 50px;
   background-color: #e4e6e2;
 }

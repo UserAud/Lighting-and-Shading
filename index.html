@@ -86,10 +86,12 @@
       
       <p style="text-decoration:underline">INSTRUCTIONS</p>
       <div id="StopStart">
-        <span>Press <kbd>SPACEBAR</kbd> key to START/PAUSE or click </span> 
+        <span>Press <button id="buttonS" class="button-2">SPACEBAR</button>           
+          key to START/PAUSE or click 
+        </span> 
         <button class="button-2 ">START/PAUSE</button>
       </div>
-      <span>To change the rotation axis, press <kbd>X</kbd><kbd>Y</kbd><kbd>Z</kbd> keys or click </span>
+      <span>To change the rotation axis, press  </span>
       <button id="buttonX" class="button-2">X</button>
       <button id="buttonY" class="button-2">Y</button>
       <button id="buttonZ" class="button-2">Z</button>
@@ -109,6 +111,10 @@
           </td>
           <td rowspan="3">
             <div class="optionR">
+              <a id='btn_toggle_light' class="btn-toggle">
+                Turn Light OFF
+              </a>
+              
               <p>Material Shininess</p>
               <input id="materialshininess" type="range" min="1" max="100" value="10" step="1" oninput="MShininess.innerText=materialshininess.value" />
               <span id="MShininess"> 10</span>
