@@ -6,7 +6,7 @@ body {
   margin: 0;
   line-height: 1.4;
   color: black;
-  overflow: hidden; /* Disable scroll */
+  overflow: scroll;
   background-image: url("https://ia903409.us.archive.org/6/items/github.com-RH12503-triangula_-_2021-04-25_12-38-33/cover.jpg");
       background-repeat: no-repeat;
             background-attachment: fixed; 
@@ -312,7 +312,7 @@ canvas{
   height: 900px;
   border-radius: 30px;
   border-style: solid;
-  border-color: #29235c;
+  border-color: #0f1bbe;
   border-width: 50px 30px 50px;
   background-color: #e4e6e2;
 }

@@ -176,18 +176,18 @@ function init() {
   //Create 3D shape : Sphere
   var mySphere = sphere(5);
   mySphere.scale(0.25, 0.25, 0.25); //Smaller the size of sphere
-  mySphere.translate(-0.6, -0.1, 0.0); //Move sphere to the lef
+  mySphere.translate(0.0, 0.0, 0.0); //Move sphere to the lef
 
   //Create 3D object : Cylinder
   var myCylinder = cylinder(72, 3, true);
   myCylinder.scale(0.30, 0.30, 0.30); //Smaller the size of cylinder
   myCylinder.rotate(45.0, [1, 1, 1]); //Rotate cylinder a bit
-  myCylinder.translate(0.0, 0.0, 0.0); //No movement for cylinder
+  myCylinder.translate(0.6, 0.0, 0.0); //No movement for cylinder
 
   //Create 3D object : Cube
   var myCube = cube(0.3);
   myCube.rotate(45.0, [1, 1, 1]); //Rotate cube a bit
-  myCube.translate(0.7, 0.0, 0.0); //Move cube to the right
+  myCube.translate(-0.6, 0.0, 0.0); //Move cube to the right
 
   //Each of the object, store their buffers separately
   sphereBuffers = createBuffersForShape(mySphere); //Create buffer for sphere
