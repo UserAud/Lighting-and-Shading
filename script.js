@@ -183,12 +183,12 @@ function init() {
 
   //Create 3D shape : Sphere
   var mySphere = sphere(5);
-  mySphere.scale(0.25, 0.25, 0.25); //Smaller the size of sphere
+  mySphere.scale(0.35, 0.35, 0.35); //Smaller the size of sphere
   mySphere.translate(0.0, 0.0, 0.0); //Move sphere to the lef
 
   //Create 3D object : Cylinder
   var myCylinder = cylinder(72, 3, true);
-  myCylinder.scale(0.30, 0.30, 0.30); //Smaller the size of cylinder
+  myCylinder.scale(0.20, 0.20, 0.20); //Smaller the size of cylinder
   myCylinder.rotate(45.0, [1, 1, 1]); //Rotate cylinder a bit
   myCylinder.translate(0.6, 0.0, 0.0); //No movement for cylinder
 
